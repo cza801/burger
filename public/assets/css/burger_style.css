@@ -1,0 +1,28 @@
+.well {
+	margin-bottom: 0px;
+}
+.panel {
+	margin-bottom: 0px;
+}
+
+.panelheader {
+	font-size: 30px;
+}
+
+body {
+	font-family: 'Germania One', cursive;
+	background-color: #cb8f36;
+}
+
+
+.leftburgers {
+	background-color: #fac303;
+}
+
+.rightburgers {
+	background-color: #47a000;
+}
+
+h4 {
+	color: red;
+}

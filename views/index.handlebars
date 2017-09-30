@@ -1,0 +1,67 @@
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-4 col-lg-offset-5">
+			<img src="../assets/img/burger.png" style="width:125px" alt="Burger Image">
+			
+		</div>
+
+	</div>
+
+	<div class="row">
+		<h2 class="text-center">Eat Da Burgers!</h2>			
+	</div>
+
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="panel panel-danger">
+				<div class="panel-heading"><p class="panelheader text-center">Look at da Burgers</p></div>
+			</div>
+					{{#each burgers}}
+						{{#unless this.devoured}}
+							<div class="col-lg-8 well well-sm leftburgers">
+									<h4>{{this.id}}.{{this.burger_name}}</h4>
+
+							</div >
+							<div class="col-lg-4">
+									<form action="/burgers/{{this.id}}?_method=PUT" method="POST">
+		        						<input type="hidden" name="devoured" value="true">
+		        						<button type="submit" style="margin: 15px;">DEVOUR!</button>
+		       						</form>
+		       				</div>
+						{{/unless}}
+					{{/each}}
+		</div>
+
+		<div class="col-lg-6">
+			<div class="panel panel-danger">
+				<div class="panel-heading"><p class="panelheader text-center">No look at da Burgers</p></div>
+					{{#each burgers}}
+						{{#if this.devoured}}
+							<div class="well well-sm rightburgers">
+								<h4>{{this.id}}.{{this.burger_name}}</h4>
+
+								
+							</div >
+						{{/if}}
+					{{/each}}
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-lg-4 col-lg-offset-4">
+			
+			<h2>Create Your Own Burger!</h2>
+			<form class="create-form" action="/burgers/new" method="POST">		
+			<div class="form-group">
+	    		<input type="text" id="newBurger" name="name" style="width: 100%">
+	 		</div>
+
+			<button type="submit">Submit Your Burger!</button>
+			</form>
+		</div>
+	</div>
+
+</div>
+
